@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wallet · EV.Bolts</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="nav" id="nav"></aside>
+    <main class="main">
+      <div class="page-head">
+        <div>
+          <h1>Wallet</h1>
+          <p>Bookings are paid from your wallet. This is a demo wallet, so no real money moves.</p>
+        </div>
+      </div>
+
+      <div id="notice" class="notice" role="status" hidden></div>
+
+      <div class="cols">
+        <section class="panel" aria-labelledby="hist-h">
+          <div class="panel-head"><h2 id="hist-h">History</h2></div>
+          <div class="table-wrap" id="history"><div class="skeleton"></div><div class="skeleton"></div></div>
+        </section>
+
+        <section class="panel balance-panel" aria-labelledby="bal-h">
+          <h2 id="bal-h" class="muted">Balance</h2>
+          <div class="balance" id="balance">–</div>
+          <form id="form" novalidate>
+            <div class="field">
+              <label for="amount">Add money</label>
+              <div class="chips" id="quick" role="group" aria-label="Quick amounts"></div>
+              <div class="input-wrap">
+                <input id="amount" name="amount" type="number" inputmode="numeric" min="10" max="50000" step="1" placeholder="Other amount (₹10 to ₹50,000)">
+              </div>
+              <p class="err" data-for="amount"></p>
+            </div>
+            <p class="form-error" role="alert"></p>
+            <button class="btn primary" type="submit">Add money</button>
+          </form>
+        </section>
+      </div>
+    </main>
+  </div>
+  <script type="module" src="/js/wallet.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My bookings · EV.Bolts</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="nav" id="nav"></aside>
+    <main class="main">
+      <div class="page-head">
+        <div>
+          <h1>My bookings</h1>
+          <p id="count">Loading…</p>
+        </div>
+        <a class="btn primary" href="/stations">Book a slot</a>
+      </div>
+
+      <div id="notice" class="notice" role="status" hidden></div>
+
+      <div class="tabs" role="tablist" aria-label="Booking status">
+        <button class="tab" role="tab" id="tab-ACTIVE" data-tab="ACTIVE" aria-selected="true">Active</button>
+        <button class="tab" role="tab" id="tab-COMPLETED" data-tab="COMPLETED" aria-selected="false">Completed</button>
+        <button class="tab" role="tab" id="tab-CANCELLED" data-tab="CANCELLED" aria-selected="false">Cancelled</button>
+      </div>
+
+      <div class="table-wrap" id="list" role="tabpanel"><div class="skeleton"></div><div class="skeleton"></div></div>
+    </main>
+  </div>
+  <script type="module" src="/js/bookings.js"></script>
+</body>
+</html>
