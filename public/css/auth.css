@@ -1,0 +1,43 @@
+/* Login + signup: the only place a photo appears. Lightly blurred, under a flat dark scrim. */
+body.auth { overflow-x: hidden; }
+
+.auth-bg {
+  position: fixed; inset: 0; z-index: -2;
+  background: url('/img/station-bg.jpg') center / cover no-repeat;
+  filter: blur(7px);
+  transform: scale(1.06); /* hides the soft edge the blur creates */
+}
+.auth-scrim { position: fixed; inset: 0; z-index: -1; background: rgba(6, 10, 8, .5); }
+
+.auth-wrap {
+  min-height: 100vh;
+  display: grid; align-content: center; justify-items: center;
+  padding: 40px var(--gutter) 72px;
+}
+.auth-panel {
+  width: 100%; max-width: 440px;
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  padding: 36px;
+  display: grid; gap: 22px;
+}
+.auth-panel.wide { max-width: 520px; }
+.auth-panel h1 { font-size: 30px; }
+.auth-panel .lede { color: var(--muted); margin-top: -10px; }
+.auth-panel form { display: grid; gap: 16px; }
+.auth-panel .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.auth-panel .switch { color: var(--muted); }
+
+
+/* Photo credit: a small button, bottom-left; hover / focus / tap expands the source line. */
+.credit { position: fixed; left: 16px; bottom: 16px; display: flex; align-items: center; max-width: calc(100vw - 32px); border-radius: 99px; background: rgba(6, 10, 8, .72); color: #d5e3da; font-size: 13px; overflow: hidden; }
+.credit-btn { flex-shrink: 0; width: 34px; height: 34px; display: grid; place-items: center; border: 0; background: none; color: inherit; border-radius: 50%; }
+.credit-text { max-width: 0; opacity: 0; white-space: nowrap; overflow: hidden; transition: max-width .3s ease, opacity .2s ease, padding .3s ease; }
+.credit:hover .credit-text, .credit:focus-within .credit-text { max-width: 620px; opacity: 1; padding-right: 16px; white-space: normal; }
+.credit a { color: #cfe0d6; }
+
+@media (max-width: 560px) {
+  .auth-panel { padding: 26px 20px; }
+  .auth-panel h1 { font-size: 24px; }
+  .auth-panel .row { grid-template-columns: 1fr; }
+}
