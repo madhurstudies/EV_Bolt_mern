@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Find chargers · EV.Bolts</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="nav" id="nav"></aside>
+    <main class="main">
+      <div class="page-head">
+        <div>
+          <h1>Find a charger</h1>
+          <p>Hold a matching bay for five minutes, then confirm it.</p>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <div class="field">
+          <label for="vehicle">Charging my</label>
+          <select id="vehicle"></select>
+        </div>
+        <p class="muted" id="origin">Distances from central Pune.</p>
+        <button class="btn sm" type="button" id="locate">Use my location</button>
+        <a class="btn sm" href="/wallet" id="wallet" title="Your wallet pays the advance when you confirm">Wallet</a>
+      </div>
+
+      <div id="notice" class="notice" role="status" hidden></div>
+
+      <div class="finder">
+        <section aria-labelledby="st-h">
+          <h2 id="st-h" class="sr-only">Stations</h2>
+          <div class="station-list" id="stations"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
+        </section>
+        <section class="panel" id="board" aria-live="polite" aria-label="Slot board"></section>
+      </div>
+    </main>
+  </div>
+  <script type="module" src="/js/stations.js"></script>
+</body>
+</html>

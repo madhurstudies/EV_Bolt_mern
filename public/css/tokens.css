@@ -1,0 +1,34 @@
+/* Design tokens. One ground, one ink, one accent. Everything else references these. */
+:root {
+  --ground: #0b0f0d;
+  --surface: #111713;
+  --raised: #18211c;
+  --raised-2: #1f2b24;
+  --line: #1f2b25;
+
+  --ink: #eef4f1;
+  --muted: #8d9d95;
+
+  --accent: #00e676;          /* small marks + the one filled button */
+  --accent-ink: #04170c;      /* text on the accent */
+  --accent-tint: #0f2a1b;     /* pale tint for areas: available bays, badges */
+  --accent-text: #5df0a4;     /* readable green on dark tints */
+
+  --hold: #f1c24f;            /* held / in progress */
+  --hold-tint: #2a2410;
+  --danger: #ff7a7a;
+  --danger-tint: #301517;
+
+  --font: 'DM Sans', Inter, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 14px;
+
+  --gutter: 40px;
+  --nav-w: 244px;
+}
+
+@media (max-width: 860px) {
+  :root { --gutter: 16px; }
+}

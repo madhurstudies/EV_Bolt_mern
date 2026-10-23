@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create account · EV.Bolts</title>
+  <meta name="description" content="Create an EV.Bolts account to find EV charging stations in Pune and book a slot.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/auth.css">
+</head>
+<body class="auth">
+  <div class="auth-bg" aria-hidden="true"></div>
+  <div class="auth-scrim" aria-hidden="true"></div>
+
+  <main class="auth-wrap">
+    <section class="auth-panel wide">
+      <a class="brand" href="/">
+        <span class="brand-mark"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></span>
+        EV.Bolts
+      </a>
+
+      <h1>Create your account</h1>
+      <p class="lede">Register your vehicle and book chargers across Pune.</p>
+
+      <form id="form" novalidate>
+        <div class="row">
+          <div class="field">
+            <label for="name">Full name</label>
+            <input id="name" name="name" type="text" autocomplete="name" placeholder="Alex Johnson" autofocus>
+            <p class="err" data-for="name"></p>
+          </div>
+          <div class="field">
+            <label for="username">Username</label>
+            <input id="username" name="username" type="text" autocomplete="username" placeholder="alex_j">
+            <p class="err" data-for="username"></p>
+          </div>
+        </div>
+        <div class="field">
+          <label for="email">Email <span class="muted">(optional)</span></label>
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="name@gmail.com">
+          <p class="err" data-for="email"></p>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="password">Password</label>
+            <div class="input-wrap">
+              <input id="password" name="password" type="password" autocomplete="new-password" placeholder="8+ characters">
+              <button type="button" class="reveal" aria-label="Show or hide password">Show</button>
+            </div>
+            <p class="err" data-for="password"></p>
+          </div>
+          <div class="field">
+            <label for="confirmPassword">Confirm password</label>
+            <div class="input-wrap">
+              <input id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password" placeholder="Repeat password">
+              <button type="button" class="reveal" aria-label="Show or hide password">Show</button>
+            </div>
+            <p class="err" data-for="confirmPassword"></p>
+          </div>
+        </div>
+        <p class="muted">Use at least 8 characters with a number and a special character.</p>
+        <p class="form-error" role="alert"></p>
+        <button class="btn primary block" type="submit">Create account</button>
+      </form>
+
+      <p class="switch">Already registered? <a href="/login">Sign in</a></p>
+    </section>
+  </main>
+
+  <div class="credit">
+    <button class="credit-btn" type="button" aria-label="Photo credit" aria-describedby="credit-text">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+    </button>
+    <p class="credit-text" id="credit-text">Photo: <a href="https://commons.wikimedia.org/wiki/File:Car2Go_Charging_Station_Stuttgart_2013_01.jpg" target="_blank" rel="noopener">Car2Go Charging Station Stuttgart 2013 01</a> by Julian Herzog, <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener">CC BY 4.0</a>, via Wikimedia Commons</p>
+  </div>
+
+  <script type="module" src="/js/signup.js"></script>
+</body>
+</html>

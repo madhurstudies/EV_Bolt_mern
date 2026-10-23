@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard · EV.Bolts</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="nav" id="nav"></aside>
+    <main class="main">
+      <div class="page-head">
+        <div>
+          <h1 id="title">Dashboard</h1>
+          <p id="subtitle">Loading your garage…</p>
+        </div>
+        <a class="btn primary" href="/stations">Find a charger</a>
+      </div>
+
+      <div id="error" class="notice err" role="alert" hidden></div>
+
+      <section class="kpis" aria-label="Summary" id="kpis"></section>
+
+      <div class="cols">
+        <div class="stack">
+          <section class="panel" aria-labelledby="veh-h">
+            <div class="panel-head">
+              <h2 id="veh-h">My vehicles</h2>
+              <a class="btn sm" href="/vehicle-setup">Add vehicle</a>
+            </div>
+            <div id="vehicles"><div class="skeleton"></div><div class="skeleton"></div></div>
+          </section>
+
+          <section class="panel" aria-labelledby="near-h">
+            <div class="panel-head">
+              <h2 id="near-h">Closest chargers</h2>
+              <a class="btn sm" href="/stations">See all</a>
+            </div>
+            <div id="nearby"><div class="skeleton"></div><div class="skeleton"></div></div>
+          </section>
+        </div>
+
+        <section class="panel" aria-labelledby="bk-h">
+          <div class="panel-head">
+            <h2 id="bk-h">Upcoming bookings</h2>
+            <a class="btn sm" href="/bookings">View all</a>
+          </div>
+          <div id="bookings"><div class="skeleton"></div><div class="skeleton"></div></div>
+        </section>
+      </div>
+    </main>
+  </div>
+  <script type="module" src="/js/dashboard.js"></script>
+</body>
+</html>
