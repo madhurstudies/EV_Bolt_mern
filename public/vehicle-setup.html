@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Add vehicle · EV.Bolts</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="nav" id="nav"></aside>
+    <main class="main">
+      <div class="page-head">
+        <div>
+          <h1>Add a vehicle</h1>
+          <p>We use its connector types to show only the bays that fit.</p>
+        </div>
+      </div>
+
+      <section class="panel form-card">
+        <form id="form" novalidate>
+          <div class="grid-2">
+            <div class="field">
+              <label for="make">Make</label>
+              <input id="make" name="make" type="text" placeholder="Tata" autocomplete="off">
+              <p class="err" data-for="make"></p>
+            </div>
+            <div class="field">
+              <label for="model">Model</label>
+              <input id="model" name="model" type="text" placeholder="Nexon EV" autocomplete="off">
+              <p class="err" data-for="model"></p>
+            </div>
+          </div>
+          <div class="grid-2">
+            <div class="field">
+              <label for="year">Model year</label>
+              <input id="year" name="year" type="number" inputmode="numeric" min="2010" max="2030" placeholder="2024">
+              <p class="err" data-for="year"></p>
+            </div>
+            <div class="field">
+              <label for="batteryCapacityKwh">Battery capacity</label>
+              <div class="input-wrap">
+                <input id="batteryCapacityKwh" name="batteryCapacityKwh" type="number" inputmode="decimal" step="0.1" min="0" placeholder="40.5">
+                <span class="suffix">kWh</span>
+              </div>
+              <p class="err" data-for="batteryCapacityKwh"></p>
+            </div>
+          </div>
+          <div class="field">
+            <label for="maxChargingPowerKw">Max charging power <span class="muted">(optional)</span></label>
+            <div class="input-wrap">
+              <input id="maxChargingPowerKw" name="maxChargingPowerKw" type="number" inputmode="decimal" step="0.1" min="0" placeholder="50">
+              <span class="suffix">kW</span>
+            </div>
+            <p class="err" data-for="maxChargingPowerKw"></p>
+          </div>
+          <div class="field">
+            <span class="label" id="conn-label">Connector types</span>
+            <div class="chips" id="chips" role="group" aria-labelledby="conn-label"></div>
+            <p class="err" data-for="connectorTypes"></p>
+          </div>
+
+          <p class="form-error" role="alert"></p>
+          <div class="form-actions">
+            <button class="btn primary" type="submit">Save vehicle</button>
+            <a class="btn" href="/dashboard">Cancel</a>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+  <script type="module" src="/js/vehicle-setup.js"></script>
+</body>
+</html>

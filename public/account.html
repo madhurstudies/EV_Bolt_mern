@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Account · EV.Bolts</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="nav" id="nav"></aside>
+    <main class="main">
+      <div class="page-head">
+        <div>
+          <h1>Account</h1>
+          <p>Your details, your password, and closing your account.</p>
+        </div>
+      </div>
+
+      <div class="account">
+        <section class="panel form-card" aria-labelledby="prof-h">
+          <div class="panel-head"><h2 id="prof-h">Profile</h2></div>
+          <form id="profile" novalidate>
+            <div class="field">
+              <label for="p-username">Username</label>
+              <input id="p-username" type="text" disabled>
+              <p class="muted hint">Your username is how you sign in, so it can't be changed.</p>
+            </div>
+            <div class="field">
+              <label for="p-name">Full name</label>
+              <input id="p-name" name="name" type="text" autocomplete="name">
+              <p class="err" data-for="name"></p>
+            </div>
+            <div class="field">
+              <label for="p-email">Email <span class="muted">(optional)</span></label>
+              <input id="p-email" name="email" type="email" autocomplete="email">
+              <p class="err" data-for="email"></p>
+            </div>
+            <p class="form-error" role="alert"></p>
+            <p class="notice ok" role="status" hidden></p>
+            <div class="form-actions"><button class="btn primary" type="submit" disabled>Save changes</button></div>
+          </form>
+        </section>
+
+        <section class="panel form-card" aria-labelledby="pw-h">
+          <div class="panel-head"><h2 id="pw-h">Change password</h2></div>
+          <form id="password" novalidate>
+            <div class="field">
+              <label for="c-current">Current password</label>
+              <div class="input-wrap">
+                <input id="c-current" name="currentPassword" type="password" autocomplete="current-password">
+                <button type="button" class="reveal" aria-label="Show or hide current password">Show</button>
+              </div>
+              <p class="err" data-for="currentPassword"></p>
+            </div>
+            <div class="field">
+              <label for="c-new">New password</label>
+              <div class="input-wrap">
+                <input id="c-new" name="newPassword" type="password" autocomplete="new-password" placeholder="8+ characters">
+                <button type="button" class="reveal" aria-label="Show or hide new password">Show</button>
+              </div>
+              <p class="err" data-for="newPassword"></p>
+            </div>
+            <div class="field">
+              <label for="c-confirm">Confirm new password</label>
+              <div class="input-wrap">
+                <input id="c-confirm" name="confirmPassword" type="password" autocomplete="new-password">
+                <button type="button" class="reveal" aria-label="Show or hide confirmation password">Show</button>
+              </div>
+              <p class="err" data-for="confirmPassword"></p>
+            </div>
+            <p class="muted hint">Changing it signs you out of every other device.</p>
+            <p class="form-error" role="alert"></p>
+            <p class="notice ok" role="status" hidden></p>
+            <div class="form-actions"><button class="btn primary" type="submit" disabled>Change password</button></div>
+          </form>
+        </section>
+
+        <section class="panel form-card danger-zone" aria-labelledby="del-h">
+          <div class="panel-head"><h2 id="del-h">Delete account</h2></div>
+          <p class="muted">This permanently removes your account, vehicles, wallet, wallet history and bookings. It can't be undone. Finish or cancel any active booking first.</p>
+          <form id="delete" novalidate>
+            <div class="field">
+              <label for="d-password">Your password</label>
+              <div class="input-wrap">
+                <input id="d-password" name="password" type="password" autocomplete="current-password">
+                <button type="button" class="reveal" aria-label="Show or hide password for deletion">Show</button>
+              </div>
+              <p class="err" data-for="password"></p>
+            </div>
+            <div class="field" id="forfeit-field" hidden>
+              <label class="check"><input type="checkbox" name="confirmForfeit"> <span id="forfeit-text">I understand my wallet balance will be lost.</span></label>
+              <p class="err" data-for="confirmForfeit"></p>
+            </div>
+            <p class="form-error" role="alert"></p>
+            <div class="form-actions"><button class="btn danger" type="submit" disabled>Delete my account</button></div>
+          </form>
+        </section>
+      </div>
+    </main>
+  </div>
+  <script type="module" src="/js/account.js"></script>
+</body>
+</html>
