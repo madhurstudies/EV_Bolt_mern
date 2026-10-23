@@ -1,0 +1,31 @@
+{
+  "name": "ev-bolts",
+  "version": "1.0.0",
+  "private": true,
+  "description": "EV.Bolts — find EV charging stations and book a slot. Node.js + Express + MongoDB + plain HTML/CSS/JS.",
+  "type": "module",
+  "main": "server/server.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node --watch --env-file-if-exists=.env server/server.js",
+    "db:check": "node --env-file-if-exists=.env server/scripts/db-check.js",
+    "seed": "node --env-file-if-exists=.env server/scripts/seed.js",
+    "test": "node --env-file-if-exists=.env --test --test-concurrency=1 tests/api/*.test.js",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cookie-parser": "^1.4.7",
+    "express": "^5.3.0",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^8.24.6"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "supertest": "^7.3.1"
+  }
+}

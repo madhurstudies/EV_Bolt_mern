@@ -1,0 +1,14 @@
+node_modules/
+.env
+.env.*
+!.env.example
+.taste-skill/
+test-results/
+playwright-report/
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+template project/
+*.env
